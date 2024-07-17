@@ -22,8 +22,18 @@ class Shop extends Model
         return $this->hasMany(Favorirte::class);
     }
 
-    public function Reservation()
+    public function reservation()
     {
         return $this->hasMany(Reservation::class);
+    }
+
+    public function area()
+    {
+        return $this->belongsTo(Area::class);
+    }
+
+    public function genre()
+    {
+        return $this->belongsTo(Genre::class);
     }
 }
