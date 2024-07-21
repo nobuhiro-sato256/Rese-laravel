@@ -11,11 +11,13 @@
 
 @section('content')
 <div>
+    
+    @foreach($shops as $shop)
     <div>
-        <img>
-        <p>仙人</p>
-        <p>#エリア</p>
-        <P>#ジャンル</P>
+        <img src="{{$shop['shop_image']}}" width="200" height="150">
+        <p>{{$shop['store_name']}}</p>
+        <p>#{{$shop->area['name']}}</p>
+        <P>#{{$shop->genre['name']}}</P>
         <form action="" method="get">
             <input type="submit" name="" value="詳しく見る">
         </form>
@@ -23,5 +25,6 @@
             <input type="submit" name="" value="お気に入りボタン(仮定)">
         </form>
     </div>
+    @endforeach
 </div>
 @endsection

@@ -14,7 +14,8 @@ use App\Http\Controllers\StoreInformationController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::middleware('auth')->group(function () {
 Route::get('/', [StoreInformationController::class, 'index']);
-});
+// Route::middleware('auth')->group(function () {
+// Route::get('/', [StoreInformationController::class, 'index']);
+// });
 
