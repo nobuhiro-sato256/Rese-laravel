@@ -15,17 +15,17 @@ class ShopsTableSeeder extends Seeder
     public function run()
     {
         DB::table('shops')->insert([
-            [
-            'store_name' => '仙人',
-            'area_id' => '1',
-            'genre_id' => '1',
-            'summary' => '料理長厳選の食材から作る寿司を用いたコースをぜひお楽しみください。食材・味・価格、お客様の満足度を徹底的に追及したお店です。特別な日のお食事、ビジネス接待まで気軽に使用することができます。',
-            'shop_image' => 'https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/sushi.jpg',
-            ],
+            // [
+            // 'store_name' => '仙人',
+            // 'area_id' => '1',
+            // 'genre_id' => '5',
+            // 'summary' => '料理長厳選の食材から作る寿司を用いたコースをぜひお楽しみください。食材・味・価格、お客様の満足度を徹底的に追及したお店です。特別な日のお食事、ビジネス接待まで気軽に使用することができます。',
+            // 'shop_image' => 'https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/sushi.jpg',
+            // ],
             [
             'store_name' => '牛助',
             'area_id' => '2',
-            'genre_id' => '5',
+            'genre_id' => '1',
             'summary' => '焼肉業界で20年間経験を積み、肉を熟知したマスターによる実力派焼肉店。長年の実績とお付き合いをもとに、なかなか食べられない希少部位も仕入れております。また、ゆったりとくつろげる空間はお仕事終わりの一杯や女子会にぴったりです。',
             'shop_image' => 'https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/yakiniku.jpg',
             ],
@@ -53,7 +53,7 @@ class ShopsTableSeeder extends Seeder
             [
             'store_name' => '香',
             'area_id' => '1',
-            'genre_id' => '5',
+            'genre_id' => '1',
             'summary' => '大小さまざまなお部屋をご用意してます。デートや接待、記念日や誕生日など特別な日にご利用ください。皆様のご来店をお待ちしております。',
             'shop_image' => 'https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/yakiniku.jpg',
             ],
@@ -81,21 +81,21 @@ class ShopsTableSeeder extends Seeder
             [
             'store_name' => '築地色合',
             'area_id' => '1',
-            'genre_id' => '1',
+            'genre_id' => '5',
             'summary' => '鮨好きの方の為の鮨屋として、迫力ある大きさの握りを1貫ずつ提供致します。',
             'shop_image' => 'https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/sushi.jpg',
             ],
             [
             'store_name' => '晴海',
             'area_id' => '2',
-            'genre_id' => '5',
+            'genre_id' => '1',
             'summary' => '毎年チャンピオン牛を買い付け、仙台市長から表彰されるほどの上質な仕入れをする精肉店オーナーの本当に美味しい国産牛を食べてもらいたいという思いから誕生したお店です。',
             'shop_image' => 'https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/yakiniku.jpg',
             ],
             [
             'store_name' => '三子',
             'area_id' => '3',
-            'genre_id' => '5',
+            'genre_id' => '1',
             'summary' => '最高級の美味しいお肉で日々の疲れを軽減していただければと贅沢にサーロインを盛り込んだ御膳をご用意しております。',
             'shop_image' => 'https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/yakiniku.jpg',
             ],
@@ -109,7 +109,7 @@ class ShopsTableSeeder extends Seeder
             [
             'store_name' => '福助',
             'area_id' => '2',
-            'genre_id' => '1',
+            'genre_id' => '5',
             'summary' => 'ミシュラン掲載店で磨いた、寿司職人の旨さへのこだわりはもちろん、 食事をゆっくりと楽しんでいただける空間作りも意識し続けております。 接待や大切なお食事にはぜひご利用ください。',
             'shop_image' => 'https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/sushi.jpg',
             ],
@@ -130,14 +130,14 @@ class ShopsTableSeeder extends Seeder
             [
             'store_name' => '経緯',
             'area_id' => '1',
-            'genre_id' => '1',
+            'genre_id' => '5',
             'summary' => '職人が一つ一つ心を込めて丁寧に仕上げた、江戸前鮨ならではの味をお楽しみ頂けます。鮨に合った希少なお酒も数多くご用意しております。他にはない海鮮太巻き、当店自慢の蒸し鮑、是非ご賞味下さい。',
             'shop_image' => 'https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/sushi.jpg',
             ],
             [
             'store_name' => '漆',
             'area_id' => '1',
-            'genre_id' => '5',
+            'genre_id' => '1',
             'summary' => '店内に一歩足を踏み入れると、肉の焼ける音と芳香が猛烈に食欲を掻き立ててくる。そんな漆で味わえるのは至極の焼き肉です。',
             'shop_image' => 'https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/yakiniku.jpg',
             ],
@@ -151,9 +151,9 @@ class ShopsTableSeeder extends Seeder
             [
             'store_name' => '木船',
             'area_id' => '2',
-            'genre_id' => '1',
+            'genre_id' => '5',
             'summary' => '毎日店主自ら市場等に出向き、厳選した魚介類が、お鮨をはじめとした繊細な料理に仕立てられます。また、選りすぐりの種類豊富なドリンクもご用意しております。',
-            'shop_image' => '毎日店主自ら市場等に出向き、厳選した魚介類が、お鮨をはじめとした繊細な料理に仕立てられます。また、選りすぐりの種類豊富なドリンクもご用意しております。',
+            'shop_image' => 'https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/sushi.jpg',
             ],
 
             ]);
