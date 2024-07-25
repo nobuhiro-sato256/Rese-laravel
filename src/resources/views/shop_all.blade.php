@@ -18,10 +18,6 @@
         <p>#{{$shop->area['name']}}</p>
         <P>#{{$shop->genre['name']}}</P>
         <a href="{{ route('detail',['id' => $shop['id'] ]) }}">詳しく見る</a>
-        <!-- <form action="/detail/{}" method="get">
-            @csrf
-            <input type="submit" name="shop_id" value="詳しく見る">
-        </form> -->
         <form action="" method="get">
             <input type="submit" name="" value="お気に入りボタン(仮定)">
         </form>
