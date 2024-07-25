@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Shop;
 use App\Models\Area;
 use App\Models\Genre;
+use App\Models\Reservation;
 
 
 class StoreInformationController extends Controller
@@ -25,5 +26,12 @@ class StoreInformationController extends Controller
     {
         $shop = Shop::where('id',$id)->with('area','genre')->first();
         return view('shop_detail',compact('shop'));
+    }
+
+    public function reservation(Request $request)
+    {
+        $form = $request->all();
+        Reservation::create($form);
+        return view('done');
     }
 }

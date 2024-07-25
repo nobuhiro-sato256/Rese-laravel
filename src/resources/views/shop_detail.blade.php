@@ -18,9 +18,13 @@
         </div>
         <div>
             <form action="/reservation" method="post">
+                @csrf
                 <div>
                     <p>予約</p>
-                    <input type="hidden" name="id" value="{{$shop['id']}}" />
+                    @if (Auth::check())
+                        <input type="hidden" name="user_id" value="{{Auth::id()}}" />
+                    @endif
+                    <input type="hidden" name="shop_id" value="{{$shop['id']}}" />
                     <input type="date" name="date" />
                     <input type="time" name="time" />
                     <select name="number" >
