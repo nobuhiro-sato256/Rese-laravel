@@ -20,4 +20,10 @@ class StoreInformationController extends Controller
         // dd($shops);
         return view('shop_all', compact('shops'));
     }
+
+    public function detail($id)
+    {
+        $shop = Shop::where('id',$id)->with('area','genre')->first();
+        return view('shop_detail',compact('shop'));
+    }
 }

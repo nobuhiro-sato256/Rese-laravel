@@ -11,16 +11,17 @@
 
 @section('content')
 <div>
-    
     @foreach($shops as $shop)
     <div>
         <img src="{{$shop['shop_image']}}" width="200" height="150">
         <p>{{$shop['store_name']}}</p>
         <p>#{{$shop->area['name']}}</p>
         <P>#{{$shop->genre['name']}}</P>
-        <form action="" method="get">
-            <input type="submit" name="" value="詳しく見る">
-        </form>
+        <a href="{{ route('detail',['id' => $shop['id'] ]) }}">詳しく見る</a>
+        <!-- <form action="/detail/{}" method="get">
+            @csrf
+            <input type="submit" name="shop_id" value="詳しく見る">
+        </form> -->
         <form action="" method="get">
             <input type="submit" name="" value="お気に入りボタン(仮定)">
         </form>

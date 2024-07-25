@@ -15,6 +15,7 @@ use App\Http\Controllers\StoreInformationController;
 |
 */
 Route::get('/', [StoreInformationController::class, 'index']);
+Route::get('/detail/{id}', [StoreInformationController::class, 'detail'])->name('detail');
 // Route::middleware('auth')->group(function () {
 // Route::get('/', [StoreInformationController::class, 'index']);
 // });
