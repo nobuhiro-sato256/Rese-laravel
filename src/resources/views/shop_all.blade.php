@@ -1,14 +1,8 @@
 @extends('layouts.app')
 
-
-@section('search')
-<form action="/logout" method="post">
-    @csrf
-    <input type="submit" name="logout" value="ログアウト">
-</form>
-<!-- ここに検索窓追加予定 -->
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/shop_all')}}">
 @endsection
-
 @section('content')
 <div>
     @foreach($shops as $shop)
