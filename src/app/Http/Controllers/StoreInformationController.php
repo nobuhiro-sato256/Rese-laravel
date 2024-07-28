@@ -7,6 +7,8 @@ use App\Models\Shop;
 use App\Models\Area;
 use App\Models\Genre;
 use App\Models\Reservation;
+use DateTime;
+use Carbon\Carbon;
 
 
 class StoreInformationController extends Controller
@@ -25,7 +27,9 @@ class StoreInformationController extends Controller
     public function detail($id)
     {
         $shop = Shop::where('id',$id)->with('area','genre')->first();
-        return view('shop_detail',compact('shop'));
+        $today = new DateTime();
+        $today_date = $today->format('Y-m-d');
+        return view('shop_detail',compact('shop','today_date'));
     }
 
     public function reservation(Request $request)
