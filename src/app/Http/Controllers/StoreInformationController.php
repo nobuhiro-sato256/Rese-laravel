@@ -36,6 +36,6 @@ class StoreInformationController extends Controller
     {
         $form = $request->all();
         Reservation::create($form);
-        return view('done');
+        return redirect('/done');
     }
 }

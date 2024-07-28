@@ -13,17 +13,14 @@
 
 <body>
     <header>
-        @if(Auth::check())
-            <a href="#auth">Rese</a>
-        @else
-            <a href="#guest">Rese</a>
-        @endif
+        <a href="#modal">Rese</a>
     </header>
     <main>
         @yield('content')
+        <div class="modal" id="modal">
         @if(Auth::check())
-            <div class="modal" id="auth">
-                <div class="modal__inner">
+            <div class="modal__inner" >
+                <div class="modal__content">
                     <ul>
                         <li>
                             <a href="{{ route('index')}}">Home</a>
@@ -35,14 +32,14 @@
                             </form>
                         </li>
                         <li>
-                            <a href="{{ route('my_page',['id' => Auth::id()])}}">Mypage</a>
+                            <a href="{{ route('my_page')}}">Mypage</a>
                         </li>
                     </ul>
                 </div>
             </div>
             @else
-            <div class="modal" id="guest">
-                <div class="modal__inner">
+            <div class="modal__inner" >
+                <div class="modal__content">
                     <ul>
                         <li>
                             <a href="{{ route('index')}}">Home</a>
@@ -63,6 +60,7 @@
                 </div>
             </div>
             @endif
+            <a href="#" class="modal__close-btn">✕</a>
         </div>
     </main>
 </body>
