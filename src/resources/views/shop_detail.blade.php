@@ -25,8 +25,8 @@
                         <input type="hidden" name="user_id" value="{{Auth::id()}}" />
                     @endif
                     <input type="hidden" name="shop_id" value="{{$shop['id']}}" />
-                    <input type="date" name="date" />
-                    <input type="time" name="time" />
+                    <input type="date" name="date" value="{{$today_date}}"/>
+                    <input type="time" name="time" min="09:00" max="18:00" />
                     <select name="number" >
                         <option value="1">1人</option>
                         <option value="2">2人</option>
