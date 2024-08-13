@@ -31,12 +31,17 @@
                     <td>{{$shop['number']}}人</td>
                 </tr>
             </table>
+            <form action="/delete_reservation" method="get">
+            @csrf
+                <input type="hidden" name="reservation_id" value="{{$shop->id}}" />
+                <button class="">✕</button>
+            </form>
         </div>
         @endforeach
     </div>
 
     <div>
-        <p>$</p>
+        <p></p>
     </div>
 </div>
 @endsection

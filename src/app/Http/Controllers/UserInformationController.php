@@ -25,6 +25,13 @@ class UserInformationController extends Controller
         return view('my_page',compact('shops'));
     }
 
+    public function delete_reservation(Request $request)
+    {
+        $reservation_id = $request->reservation_id;
+        Reservation::find($reservation_id)->delete();
+        return redirect('/my_page');
+    }
+
     public function favorite(Request $request)
     {
         $shop_id = $request['shop_id'];
