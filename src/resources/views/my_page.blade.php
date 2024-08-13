@@ -9,10 +9,10 @@
 <div>
     <div>
         <p>予約状況</p>
-        @foreach($shops as $shop)
+        @foreach($shops as $order => $shop)
         <div>
             <div>時計マーク</div>
-            <p>予約内容</p>
+            <p>予約{{++$order}}</p>
             <table>
                 <tr>
                     <th>Shop</th>
@@ -36,7 +36,7 @@
     </div>
 
     <div>
-
+        <p>$</p>
     </div>
 </div>
 @endsection
