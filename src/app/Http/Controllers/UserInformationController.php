@@ -21,8 +21,15 @@ class UserInformationController extends Controller
         $id = Auth::id();
         $today = new DateTime();
         $today = $today->format('Y-m-d');
-        $shops = Reservation::where('user_id',$id)->where('date','>=',$today)->with('shop','user')->get();
-        return view('my_page',compact('shops'));
+        $reservations = Reservation::where('user_id',$id)->where('date','>=',$today)->with('shop','user')->get();
+        $favorites = Favorite::where('user_id',$id)->with('shop')->get();
+        foreach($favorites as $favorite){
+            $area = Area::find($favorite->shop['area_id']);
+            $genre = Genre::find($favorite->shop['genre_id']);
+            $favorite->area = $area["name"];
+            $favorite->genre = $genre["name"];
+        };
+        return view('my_page',compact('reservations','favorites'));
     }
 
     public function delete_reservation(Request $request)
@@ -35,6 +42,7 @@ class UserInformationController extends Controller
     public function favorite(Request $request)
     {
         $shop_id = $request['shop_id'];
+        $page = $request['page'];
         $id = Auth::id();
         $favorite = Favorite::where('user_id',$id)->where('shop_id',$shop_id)->first();
         if(!$favorite){
@@ -42,10 +50,14 @@ class UserInformationController extends Controller
             'user_id' => $id,
             'shop_id' => $shop_id,
             ]);
-            return redirect('/');
         }else{
             Favorite::find($favorite->id)->delete();
-            return redirect('/');
+        };
+        switch($page){
+            case 'shop_all':
+                return redirect('/');
+            case 'my_page';
+                return redirect('/my_page');
         };
         }
 }

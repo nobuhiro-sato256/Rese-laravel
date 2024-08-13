@@ -15,6 +15,7 @@
         <form action="/favorite" method="get">
         @csrf
             <input type="hidden" name="shop_id" value="{{ $shop['id'] }}" />
+            <input type="hidden" name="page" value="shop_all" />
         @php
             $favored = false;
         @endphp
