@@ -36,6 +36,12 @@
                 <input type="hidden" name="reservation_id" value="{{$reservation->id}}" />
                 <button class="">✕</button>
             </form>
+            <form action="/reservation_change" method="post">
+            @csrf
+                <input type="hidden" name="shop_id" value="{{$reservation['shop_id']}}" />
+                <input type="hidden" name="user_id" value="{{$reservation['user_id']}}" />
+                <button class="">予約変更</button>
+            </form>
         </div>
         @endforeach
     </div>

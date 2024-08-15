@@ -38,6 +38,14 @@ class StoreInformationController extends Controller
         return redirect('/done');
     }
 
+    public function update(Request $request)
+    {
+        $form = $request->all();
+        unset($form['_token']);
+        Reservation::find($request->id)->update($form);
+        return redirect('/my_page');
+    }
+
     public function search(Request $request)
     {
         $element = $request->all();

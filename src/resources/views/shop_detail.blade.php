@@ -17,12 +17,13 @@
             <P>{{$shop['summary']}}</P>
         </div>
         <div>
+            @if(!empty($today_date))
             <form action="/reservation" method="post">
                 @csrf
                 <div>
                     <p>予約</p>
                     @if (Auth::check())
-                        <input type="hidden" name="user_id" value="{{Auth::id()}}" />
+                    <input type="hidden" name="user_id" value="{{Auth::id()}}" />
                     @endif
                     <input type="hidden" name="shop_id" value="{{$shop['id']}}" />
                     <input type="date" name="date" value="{{$today_date}}"/>
@@ -44,7 +45,37 @@
                 <div>
                     <input type="submit" value="予約する" />
                 </div>
+                @else
+                <form action="/update" method="post">
+                @csrf
+                <div>
+                    <p>予約変更</p>
+                    @if (Auth::check())
+                    <input type="hidden" name="user_id" value="{{Auth::id()}}" />
+                    @endif
+                    <input type="hidden" name="shop_id" value="{{$shop['id']}}" />
+                    <input type="date" name="date" value="{{$reservation['date']}}"/>
+                    <input type="time" name="time" min="09:00" max="18:00" />
+                    <select name="number"  >
+                        <option value="1">1人</option>
+                        <option value="2">2人</option>
+                        <option value="3">3人</option>
+                        <option value="4">4人</option>
+                        <option value="5">5人</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Shop</p>
+                    <p>Date</p>
+                    <p>Time</p>
+                    <p>Number</p>
+                </div>
+                <div>
+                    <input type="hidden" name="id" value="{{$reservation['id']}}" />
+                    <input type="submit" value="予約変更" />
+                </div>
             </form>
+            @endif
         </div>
     </div>
 </div>
