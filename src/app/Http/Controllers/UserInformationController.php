@@ -39,6 +39,14 @@ class UserInformationController extends Controller
         return redirect('/my_page');
     }
 
+    public function change(Request $request)
+    {
+        $reservation = $request->all();
+        $shop = Shop::where('id',$reservation['shop_id'])->with('area','genre')->first();
+        $reservation = Reservation::where('user_id',$reservation['user_id'])->where('shop_id',$reservation['shop_id'])->first();
+        return view('shop_detail',compact('shop','reservation'));
+    }
+
     public function favorite(Request $request)
     {
         $shop_id = $request['shop_id'];
