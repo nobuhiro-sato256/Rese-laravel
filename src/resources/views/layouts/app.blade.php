@@ -14,6 +14,7 @@
 <body>
     <header>
         <a href="#modal">Rese</a>
+        @yield('search')
     </header>
     <main>
         @yield('content')

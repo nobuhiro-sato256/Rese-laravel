@@ -17,7 +17,10 @@ use App\Http\Controllers\StoreInformationController;
 Route::get('/', [StoreInformationController::class, 'index'])->name('index');
 Route::get('/detail/{id}', [StoreInformationController::class, 'detail'])->name('detail');
 Route::post('/reservation', [StoreInformationController::class, 'reservation'])->middleware('auth');
+Route::get('/search', [StoreInformationController::class, 'search'])->middleware('auth');
+
 Route::get('/done', function(){return view('done');});
+
 Route::get('/my_page', [UserInformationController::class, 'my_page'])->name('my_page')->middleware('auth');
 Route::get('/delete_reservation', [UserInformationController::class, 'delete_reservation']);
 Route::get('/favorite', [UserInformationController::class,'favorite'])->middleware('auth');

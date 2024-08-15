@@ -3,6 +3,38 @@
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/shop_all.css')}}">
 @endsection
+
+@section('search')
+
+<div>
+    <form action="/search" method="get">
+        <span>
+            <select name="area">
+                <option value="">All area</option>
+                <option value="1">東京都</option>
+                <option value="2">大阪府</option>
+                <option value="3">福岡県</option>
+            </select>
+        </span>
+        <span>
+            <select name="genre">
+                <option value="">All genre</option>
+                <option value="1">焼き肉</option>
+                <option value="2">居酒屋</option>
+                <option value="3">イタリアン</option>
+                <option value="4">ラーメン</option>
+                <option value="5">寿司</option>
+            </select>
+        </span>
+        <span>
+            <input type="text" name="store_name" placeholder="Search..." />
+            <button type="submit"></button>
+        </span>
+    </form>
+</div>
+
+@endsection
+
 @section('content')
 <div>
     @foreach($shops as $shop)
