@@ -37,4 +37,24 @@ class StoreInformationController extends Controller
         Reservation::create($form);
         return redirect('/done');
     }
+
+    public function search(Request $request)
+    {
+        $element = $request->all();
+        $query = Shop::with('area','genre');
+        $search = array_filter($element);
+        if(!empty($search['area'])){
+            $query->where('area_id',$search['area']);
+        }
+        if(!empty($search['genre'])){
+            $query->where('genre_id',$search['genre']);
+        }
+        if(!empty($search['store_name'])){
+            $query->where('store_name','like','%' . $search['store_name'] . '%');
+        }
+        $shops = $query->get();
+        $id = Auth::id();
+        $favorites = Favorite::where('user_id',$id)->get();
+        return view('shop_all', compact('shops','favorites'));
+    }
 }
