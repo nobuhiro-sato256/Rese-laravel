@@ -36,4 +36,9 @@ class Shop extends Model
     {
         return $this->belongsTo(Genre::class);
     }
+
+    public function evaluation()
+    {
+        return $this->hasMany(Evaluation::class);
+    }
 }
