@@ -13,8 +13,15 @@
 
 <body>
     <header>
-        <a href="#modal">Rese</a>
-        @yield('search')
+        <div class="header__main">
+            <a class="icon" href="#modal">
+                <div class="icon__mark">
+                    <div class="icon__border"></div>
+                </div>
+                <span class="icon__title">Rese</span>
+            </a>
+            @yield('search')
+        </div>
     </header>
     <main>
         @yield('content')

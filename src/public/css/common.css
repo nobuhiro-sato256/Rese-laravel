@@ -1,3 +1,13 @@
+body {
+    margin: 0 10vw;
+}
+.header__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
 .modal {
     position: fixed;
     top: 0;
@@ -5,9 +15,77 @@
     visibility: hidden;
     width: 100%;
     height: 100%;
+    display: block;
 }
 
 .modal:target {
     visibility: visible;
     background-color: aliceblue;
+}
+
+.icon {
+    height: 40px;
+    text-decoration: none;
+    color: #3b70f6;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.icon__mark {
+    width: 40px;
+    height: 100%;
+    background-color: #3b70f6;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #A9A9A9;
+    position: relative;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.icon__mark::before,
+.icon__mark::after,
+.icon__border{
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 1.5px;
+    border-radius: 3px;
+    margin: 0 8px;
+}
+
+/* 上のライン */
+.icon__mark::before {
+    width: 40%;
+    top: 30%;
+}
+
+/* 中央のライン  */
+.icon__border {
+    width: 65%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 下のライン */
+.icon__mark::after {
+    width: 20%;
+    bottom: 30%;
+}
+
+.search {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.search__span {
+    display: inline-block;
+    
+}
+
+.search__select {
+    height: 60px;
+    display: inline-block;
 }
