@@ -26,6 +26,7 @@ Route::get('/my_page', [UserInformationController::class, 'my_page'])->name('my_
 Route::get('/delete_reservation', [UserInformationController::class, 'delete_reservation']);
 Route::post('/reservation_change', [UserInformationController::class,'change']);
 Route::get('/favorite', [UserInformationController::class,'favorite'])->middleware('auth');
+Route::get('/evaluation', [UserInformationController::class,'evaluation']);
 // Route::middleware('auth')->group(function () {
 // Route::get('/', [StoreInformationController::class, 'index']);
 // });

@@ -68,4 +68,10 @@ class UserInformationController extends Controller
                 return redirect('/my_page');
         };
         }
+
+    public function evaluation()
+    {
+        $id = Auth::id();
+
+    }
 }
