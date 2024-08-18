@@ -6,6 +6,10 @@
 
 @section('search')
 
+
+<script>
+    alert("うんこ")
+</script>
 <div class="search">
     <form action="/search" method="get">
         <!-- <span class="search__span"> -->
