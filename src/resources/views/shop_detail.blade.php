@@ -26,9 +26,9 @@
                     <input type="hidden" name="user_id" value="{{Auth::id()}}" />
                     @endif
                     <input type="hidden" name="shop_id" value="{{$shop['id']}}" />
-                    <input type="date" name="date" value="{{$today_date}}"/>
-                    <input type="time" name="time" min="09:00" max="18:00" />
-                    <select name="number" >
+                    <input type="date" name="date" oninput="finalConfirmation()" id="date" value="{{$today_date}}"/>
+                    <input type="time" name="time" oninput="finalConfirmation()" id="time" min="09:00" max="18:00" />
+                    <select name="number" oninput="finalConfirmation()" id="number" >
                         <option value="1">1人</option>
                         <option value="2">2人</option>
                         <option value="3">3人</option>
@@ -37,10 +37,22 @@
                     </select>
                 </div>
                 <div>
-                    <p>Shop</p>
-                    <p>Date</p>
-                    <p>Time</p>
-                    <p>Number</p>
+                    <div>
+                        <p>Shop</p>
+                        <p>{{$shop['store_name']}}</p>
+                    </div>
+                    <div>
+                        <p>Date</p>
+                        <p id="date"></p>
+                    </div>
+                    <div>
+                        <p>Time</p>
+                        <p id="time"></p>
+                    </div>
+                    <div>
+                        <p>Number</p>
+                        <p id="number"></p>
+                    </div>
                 </div>
                 <div>
                     <input type="submit" value="予約する" />
@@ -64,7 +76,7 @@
                         <option value="5">5人</option>
                     </select>
                 </div>
-                <div>
+                <div class="final__confirmation">
                     <p>Shop</p>
                     <p>Date</p>
                     <p>Time</p>
@@ -79,4 +91,10 @@
         </div>
     </div>
 </div>
+
+<script>
+    function finalConfirmation(){
+        document.getElementById()
+    }
+</script>
 @endsection
