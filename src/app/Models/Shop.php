@@ -41,4 +41,9 @@ class Shop extends Model
     {
         return $this->hasMany(Evaluation::class);
     }
+
+    public function representative()
+    {
+        return $this->belongsTo(Representative::class);
+    }
 }
