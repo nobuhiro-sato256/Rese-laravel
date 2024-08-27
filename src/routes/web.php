@@ -31,3 +31,5 @@ Route::get('/evaluation', [UserInformationController::class,'evaluation']);
 // Route::get('/', [StoreInformationController::class, 'index']);
 // });
 
+
+// Route::get('/admin', )

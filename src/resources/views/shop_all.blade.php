@@ -6,10 +6,6 @@
 
 @section('search')
 
-
-<script>
-    alert("うんこ")
-</script>
 <div class="search">
     <form action="/search" method="get">
         <!-- <span class="search__span"> -->
@@ -40,35 +36,41 @@
 @endsection
 
 @section('content')
-<div>
+<div class="list">
     @foreach($shops as $shop)
-    <div>
-        <img src="{{$shop['shop_image']}}" width="200" height="150">
-        <p>{{$shop['store_name']}}</p>
-        <p>#{{$shop->area['name']}}</p>
-        <P>#{{$shop->genre['name']}}</P>
-        <a href="{{ route('detail',['id' => $shop['id'] ]) }}">詳しく見る</a>
-        <form action="/favorite" method="get">
-        @csrf
-            <input type="hidden" name="shop_id" value="{{ $shop['id'] }}" />
-            <input type="hidden" name="page" value="shop_all" />
-        @php
-            $favored = false;
-        @endphp
-        @foreach($favorites as $favorite)
-            @if($shop['id'] == $favorite['shop_id'])
+    <div class="shop">
+        <img class="shop__image" src="{{$shop['shop_image']}}" >
+        <div class="shop__content">
+            <p class="shop__title">{{$shop['store_name']}}</p>
+            <div class="shop__tag">
+                <p>#{{$shop->area['name']}}</p>
+                <P>#{{$shop->genre['name']}}</P>
+            </div>
+            <div class="shop__item">
+                <button class="shop__button" onclick="location.href='{{ route('detail',['id' => $shop['id'] ]) }}'">詳しく見る</button>
+                <form class="shop__favorite" action="/favorite" method="get">
+                @csrf
+                    <input type="hidden" name="shop_id" value="{{ $shop['id'] }}" />
+                    <input type="hidden" name="page" value="shop_all" />
                 @php
-                    $favored = true;
-                    break;
+                    $favored = false;
                 @endphp
-            @endif
-        @endforeach
-        @if($favored)
-            <button class="heart__favorite"></button>
-        @else
-            <button class="heart"></button>
-        @endif
-        </form>
+                @foreach($favorites as $favorite)
+                    @if($shop['id'] == $favorite['shop_id'])
+                        @php
+                            $favored = true;
+                            break;
+                        @endphp
+                    @endif
+                @endforeach
+                @if($favored)
+                    <button class="heart__favorite"></button>
+                @else
+                    <button class="heart"></button>
+                @endif
+                </form>
+            </div>
+        </div>
     </div>
     @endforeach
 </div>
