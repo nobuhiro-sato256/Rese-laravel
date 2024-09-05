@@ -34,6 +34,7 @@ class StoreInformationController extends Controller
     public function reservation(Request $request)
     {
         $form = $request->all();
+        unset($form['_token']);
         Reservation::create($form);
         return redirect('/done');
     }
