@@ -74,6 +74,7 @@
                     @if(!empty($today_date))
                     <input class="shop__submit--button" type="submit" value="予約する" />
                     @else
+                    <input type="hidden" name="id" value="{{$reservation->id}}" />
                     <input class="shop__submit--button" type="submit" value="予約変更" />
                     @endif
                 </div>
