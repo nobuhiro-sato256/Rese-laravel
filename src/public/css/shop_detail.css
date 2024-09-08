@@ -11,10 +11,6 @@
     display: flex;
 }
 
-.shop__title--form {
-
-}
-
 .shop__title--button {
     background-color: white;
     border: 1px solid rgb(158, 156, 156);
@@ -55,11 +51,13 @@
     width: 40%;
     border-radius: 5px;
     box-shadow: 3px 3px 3px #A9A9A9;
+    aspect-ratio: 4 / 2;
 }
 
 .shop__form {
     height: 100%;
     color: white;
+    position: relative;
 }
 
 .shop__reservation--input {
@@ -100,7 +98,7 @@
 
 .shop__confirmation {
     width: 90%;
-    margin: 10px auto 220px;
+    margin: 10px auto 0;
     background-color: rgb(91, 134, 229);
     border-radius: 5px;
 }
@@ -135,10 +133,9 @@
 .shop__submit {
     width: 100%;
     margin: auto 0 0 0;
-}
-
-.shop__submit {
     height: 52px;
+    position: absolute;
+    bottom: 0;
 }
 
 .shop__submit--button {
