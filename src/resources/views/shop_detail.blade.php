@@ -38,12 +38,27 @@
                     <input type="hidden" name="user_id" value="{{Auth::id()}}" />
                     @endif
                     <input type="hidden" name="shop_id" value="{{$shop['id']}}" />
+                    @error('date')
+                    @foreach ($errors->get('date') as $error)
+                    <p class="error__text">{{$error}}</p>
+                    @endforeach
+                    @enderror
                     @if(!empty($today_date))
                     <input class="shop__reservation--date" type="date" name="date" oninput="finalConfirmation()" id="date" value="{{$today_date}}"/>
                     @else
                     <input class="shop__reservation--date" type="date" name="date" value="{{$reservation['date']}}"/>
                     @endif
+                    @error('time')
+                    @foreach ($errors->get('time') as $error)
+                    <p class="error__text">{{$error}}</p>
+                    @endforeach
+                    @enderror
                     <input class="shop__reservation--time" type="time" name="time" oninput="finalConfirmation()" id="time" min="09:00" max="18:00" />
+                    @error('number')
+                    @foreach ($errors->get('number') as $error)
+                    <p class="error__text">{{$error}}</p>
+                    @endforeach
+                    @enderror
                     <select class="shop__reservation--number" name="number" oninput="finalConfirmation()" id="number" >
                         <option value="1">1人</option>
                         <option value="2">2人</option>

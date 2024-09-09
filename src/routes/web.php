@@ -24,7 +24,7 @@ Route::get('/done', function(){return view('done');});
 
 Route::get('/my_page', [UserInformationController::class, 'my_page'])->name('my_page')->middleware('auth');
 Route::get('/delete_reservation', [UserInformationController::class, 'delete_reservation']);
-Route::post('/reservation_change', [UserInformationController::class,'change']);
+Route::get('/reservation_change', [UserInformationController::class,'change']);
 Route::get('/favorite', [UserInformationController::class,'favorite'])->middleware('auth');
 Route::get('/evaluation', [UserInformationController::class,'evaluation']);
 Route::get('/thanks', function () {

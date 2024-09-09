@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ReservationRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Shop;
 use App\Models\Area;
@@ -31,7 +32,7 @@ class StoreInformationController extends Controller
         return view('shop_detail',compact('shop','today_date'));
     }
 
-    public function reservation(Request $request)
+    public function reservation(ReservationRequest $request)
     {
         $form = $request->all();
         unset($form['_token']);
@@ -39,7 +40,7 @@ class StoreInformationController extends Controller
         return redirect('/done');
     }
 
-    public function update(Request $request)
+    public function update(ReservationRequest $request)
     {
         $form = $request->all();
         unset($form['_token']);
