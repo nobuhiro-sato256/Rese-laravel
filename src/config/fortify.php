@@ -73,7 +73,10 @@ return [
     | and the user is authenticated. You are free to change this value.
     |
     */
-
+    'redirects' => [
+        'register' =>'/thanks',
+    ],
+    
     'home' => RouteServiceProvider::HOME,
 
     /*
