@@ -1,0 +1,33 @@
+.thanks {
+    display: flex;
+}
+
+.thanks__card {
+    background-color: white;
+    width: 40%;
+    margin: 30px auto;
+    height: 250px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #A9A9A9;
+}
+
+.thanks__card > p {
+    text-align: center;
+    font-size: 20px;
+    margin: 70px 0 50px;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+}
+
+.login__button {
+    border: none;
+    background: #3b70f6;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    height: 28px;
+    width: 110px;
+}
