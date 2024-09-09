@@ -27,48 +27,49 @@
         @yield('content')
         <div class="modal" id="modal">
         @if(Auth::check())
+            <div class="modal__close">
+                <a href="#" class="modal__close-btn"></a>
+            </div>
             <div class="modal__inner" >
-                <div class="modal__content">
-                    <ul>
-                        <li>
-                            <a href="{{ route('index')}}">Home</a>
-                        </li>
-                        <li>
-                            <form action="/logout" method="post">
-                                @csrf
-                                <button>Logout</button>
-                            </form>
-                        </li>
-                        <li>
-                            <a href="{{ route('my_page')}}">Mypage</a>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="modal__content">
+                    <li class="modal__content-list">
+                        <a href="{{ route('index')}}">Home</a>
+                    </li>
+                    <li class="modal__content-list">
+                        <form class="modal__content-log" action="/logout" method="post">
+                            @csrf
+                            <button>Logout</button>
+                        </form>
+                    </li>
+                    <li class="modal__content-list">
+                        <a href="{{ route('my_page')}}">Mypage</a>
+                    </li>
+                </ul>
             </div>
             @else
+            <div class="modal__close">
+                <a href="#" class="modal__close-btn"></a>
+            </div>
             <div class="modal__inner" >
-                <div class="modal__content">
-                    <ul>
-                        <li>
-                            <a href="{{ route('index')}}">Home</a>
-                        </li>
-                        <li>
-                            <form action="/register" method="get">
-                                @csrf
-                                <button>Registration</button>
-                            </form>
-                        </li>
-                        <li>
-                            <form action="/login" method="get">
-                                @csrf
-                                <button>Login</button>
-                            </form>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="modal__content">
+                    <li class="modal__content-list">
+                        <a href="{{ route('index')}}">Home</a>
+                    </li>
+                    <li class="modal__content-list">
+                        <form class="modal__content-log"  action="/register" method="get">
+                            @csrf
+                            <button>Registration</button>
+                        </form>
+                    </li>
+                    <li class="modal__content-list">
+                        <form class="modal__content-login" action="/login" method="get">
+                            @csrf
+                            <button>Login</button>
+                        </form>
+                    </li>
+                </ul>
             </div>
             @endif
-            <a href="#" class="modal__close-btn">✕</a>
         </div>
     </main>
 </body>
