@@ -39,7 +39,7 @@
                         <td>{{$reservation['number']}}人</td>
                     </tr>
                 </table>
-                <form class="reservation__contents-change"action="/reservation_change" method="post">
+                <form class="reservation__contents-change"action="/reservation_change" method="get">
                 @csrf
                     <input type="hidden" name="shop_id" value="{{$reservation['shop_id']}}" />
                     <input type="hidden" name="user_id" value="{{$reservation['user_id']}}" />
