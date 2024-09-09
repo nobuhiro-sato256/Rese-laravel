@@ -11,7 +11,7 @@
         <p>会員登録ありがとうございます</p>
         <form class="login" action="/login" method="get">
             @csrf
-            <button>ログインする</button>
+            <button class="login__button">ログインする</button>
         </form>
     </div>
 </div>
