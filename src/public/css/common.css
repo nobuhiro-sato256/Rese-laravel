@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 body {
     margin: 0 5vw;
     background-color: #f3f3f1;
@@ -89,4 +90,75 @@ body {
 .search__select {
     height: 60px;
     display: inline-block;
+}
+
+.modal__close {
+    background-color: white;
+}
+
+.modal__close > a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #A9A9A9;
+    background-color: #3b70f6;
+    width: 60px;
+    height: 60px;
+    margin: 40px 0 0 40px;
+}
+
+.modal__close > a::before, .modal__close > a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 30px;
+    background: white;
+}
+
+.modal__close > a::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.modal__close>a::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.modal__inner {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    background-color: white;
+}
+
+.modal__content {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.modal__content-list > a {
+    text-decoration: none;
+    color: #3b70f6;
+    font-size: 40px;
+}
+
+.modal__content-log > button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #3b70f6;
+    font-size: 40px;
+    margin: 20px 0 20px;
+}
+
+.modal__content-login > button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #3b70f6;
+    font-size: 40px;
 }

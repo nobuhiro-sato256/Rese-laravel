@@ -1,32 +1,52 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{asset('css/auth/register.css')}}">
+@endsection
 
 @section('content')
-<div>
-    <div>
-        <h2>Registration</h2>
+<div class="register">
+    <div class="register__card">
+        <div class="register__title">
+            <p>Registration</p>
+        </div>
+        <div class="register__main">
+            <form class="register__form" action="/register" method="post">
+                @csrf
+                <div class="register__form-box">
+                    @error('name')
+                    @foreach ($errors->get('name') as $error)
+                    <p>{{ $error }}</p>
+                    @endforeach
+                    @enderror
+                    <div class="register__form-item">
+                        <i class="bi bi-person-fill"></i>
+                        <input type="text" name="name" placeholder="Username" value="{{ old('name') }}" />
+                    </div>
+                    @error('email')
+                    @foreach ($errors->get('email') as $error)
+                    <p>{{ $error }}</p>
+                    @endforeach
+                    @enderror
+                    <div class="register__form-item">
+                        <i class="bi bi-envelope-fill"></i>
+                        <input type="email" name="email" placeholder="Email" value="{{ old('email') }}" />
+                    </div>
+                    @error('password')
+                    @foreach ($errors->get('password') as $error)
+                    <p>{{ $error }}</p>
+                    @endforeach
+                    @enderror
+                    <div class="register__form-item">
+                        <i class="bi bi-lock-fill"></i>
+                        <input type="password" name="password" placeholder="Password" />
+                    </div>
+                </div>
+                <div class="register__form-button">
+                    <input type="submit" value="登録" />
+                </div>
+            </form>
+        </div>
     </div>
-    <form action="/register" method="post">
-        @csrf
-        @error('name')
-        @foreach ($errors->get('name') as $error)
-        <p>{{ $error }}</p>
-        @endforeach
-        @enderror
-        <input type="text" name="name" placeholder="Username" value="{{ old('name') }}" />
-        @error('email')
-        @foreach ($errors->get('email') as $error)
-        <p>{{ $error }}</p>
-        @endforeach
-        @enderror
-        <input type="email" name="email" placeholder="Email" value="{{ old('email') }}" />
-        @error('password')
-        @foreach ($errors->get('password') as $error)
-        <p>{{ $error }}</p>
-        @endforeach
-        @enderror
-        <input type="password" name="password" placeholder="Password" />
-        <input type="submit" value="登録" />
-    </form>
 </div>
 @endsection

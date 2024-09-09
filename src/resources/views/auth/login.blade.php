@@ -1,26 +1,43 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{asset('css/auth/login.css')}}">
+@endsection
 
 @section('content')
-<div>
-    <div>
-        <h2>Login</h2>
+<div class="login">
+    <div class="login__card">
+        <div class="login__title">
+            <p>Login</p>
+        </div>
+        <div class="login__main">
+            <form class="login__form" action="/login" method="post">
+                @csrf
+                <div class="login__form-box">
+                    @error('email')
+                    @foreach ($errors->get('email') as $error)
+                    <P>{{ $error }}</P>
+                    @endforeach
+                    @enderror
+                    <div class="login__form-item">
+                        <i class="bi bi-envelope-fill"></i>
+                        <input type="email" name="email" placeholder="Email" value="{{ old('email') }}"/>
+                    </div>
+                    @error('password')
+                    @foreach ($errors->get('password') as $error)
+                    <P>{{ $error }}</P>
+                    @endforeach
+                    @enderror
+                    <div class="login__form-item">
+                        <i class="bi bi-lock-fill"></i>
+                        <input type="password" name="password" placeholder="Password" />
+                    </div>
+                </div>
+                <div class="login__form-button">
+                    <input type="submit" value="ログイン" />
+                </div>
+            </form>
+        </div>
     </div>
-    <form action="/login" method="post">
-        @csrf
-        @error('email')
-        @foreach ($errors->get('email') as $error)
-        <P>{{ $error }}</P>
-        @endforeach
-        @enderror
-        <input type="email" name="email" placeholder="Email" value="{{ old('email') }}"/>
-        @error('password')
-        @foreach ($errors->get('password') as $error)
-        <P>{{ $error }}</P>
-        @endforeach
-        @enderror
-        <input type="password" name="password" placeholder="Password" />
-        <input type="submit" value="ログイン" />
-    </form>
 </div>
 @endsection
