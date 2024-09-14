@@ -11,6 +11,8 @@ class Identification extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $order;
+
     /**
      * Create a new message instance.
      *
@@ -18,7 +20,7 @@ class Identification extends Mailable
      */
     public function __construct()
     {
-        //
+        $this->order = $order;
     }
 
     /**
