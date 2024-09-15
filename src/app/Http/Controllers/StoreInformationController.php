@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Identification;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Http\Requests\ReservationRequest;
 use Illuminate\Support\Facades\Auth;
@@ -16,6 +18,11 @@ use Carbon\Carbon;
 
 class StoreInformationController extends Controller
 {
+    public function mail()
+    {
+        Mail::to('customer@example.com')->send(new Identification());
+    }
+
     public function index()
     {
         $shops = Shop::with('area','genre')->get();
