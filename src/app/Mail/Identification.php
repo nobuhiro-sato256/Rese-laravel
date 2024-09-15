@@ -20,7 +20,7 @@ class Identification extends Mailable
      */
     public function __construct()
     {
-        $this->order = $order;
+        // $this->order = $order;
     }
 
     /**
@@ -30,6 +30,6 @@ class Identification extends Mailable
      */
     public function build()
     {
-        return $this->view('email.identification');
+        return $this->from('example@example.com', 'Example')->view('emails.identification');
     }
 }

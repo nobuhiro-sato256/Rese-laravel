@@ -14,6 +14,7 @@ use App\Http\Controllers\StoreInformationController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/mail', [StoreInformationController::class, 'mail']);
 Route::get('/', [StoreInformationController::class, 'index'])->name('index');
 Route::get('/detail/{id}', [StoreInformationController::class, 'detail'])->name('detail');
 Route::post('/reservation', [StoreInformationController::class, 'reservation'])->middleware('auth');
