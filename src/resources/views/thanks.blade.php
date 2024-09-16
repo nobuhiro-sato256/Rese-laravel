@@ -8,11 +8,12 @@
 
 <div class="thanks">
     <div class="thanks__card">
-        <p>仮登録ありがとうございます。<br>送られたメールのリンクを開いて本登録を完了してください。</p>
+        <p>会員登録ありがとうございます。</p>
         <form class="login" action="/login" method="get">
             @csrf
             <button class="login__button">ログインする</button>
         </form>
+        <p></p>
     </div>
 </div>
 
