@@ -18,11 +18,6 @@ use Carbon\Carbon;
 
 class StoreInformationController extends Controller
 {
-    public function mail()
-    {
-        Mail::to('customer@example.com')->send(new Identification());
-    }
-
     public function index()
     {
         $shops = Shop::with('area','genre')->get();

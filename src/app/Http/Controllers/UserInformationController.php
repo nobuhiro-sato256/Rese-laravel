@@ -16,6 +16,8 @@ use Carbon\Carbon;
 
 class UserInformationController extends Controller
 {
+    
+
     public function my_page()
     {
         $id = Auth::id();
@@ -69,9 +71,9 @@ class UserInformationController extends Controller
         };
         }
 
-    public function evaluation()
-    {
-        $id = Auth::id();
+    // public function evaluation()
+    // {
+    //     $id = Auth::id();
 
-    }
+    // }
 }
