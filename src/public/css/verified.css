@@ -1,0 +1,45 @@
+.verified {
+    display: flex;
+}
+
+.verified__card {
+    background-color: white;
+    width: 70%;
+    margin: 30px auto;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #A9A9A9;
+}
+
+.verified__massage {
+    text-align: center;
+    font-size: 20px;
+    margin: 70px 0 50px;
+}
+
+.verified__retransmission {
+    text-align: center;
+    font-size: 18px;
+    margin: 0 0 20px;
+}
+
+.retransmission {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.retransmission__button {
+    margin-bottom: 20px;
+    background-color: #3b70f6;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.retransmission__session {
+    margin: 0 0 30px;
+    color: #3b70f6;
+    text-align: center;
+}

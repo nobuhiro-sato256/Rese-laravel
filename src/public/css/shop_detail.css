@@ -28,7 +28,6 @@
 }
 
 .shop__about {
-    /* width: 380px; */
     margin: 20px 0 3px 0;
 
 }
@@ -71,6 +70,11 @@
     font-size: 28px;
     margin-bottom: 20px;
 }
+
+.error__text {
+    margin: 0;
+}
+
 .shop__reservation--date {
     display: block;
     width: 35%;

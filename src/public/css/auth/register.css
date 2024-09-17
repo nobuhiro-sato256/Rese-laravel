@@ -37,7 +37,7 @@
 }
 
 .register__form-box {
-    height: 70%;
+    height: 80%;
     padding-top: 2% 0 2%;
     display: flex;
     flex-direction: column;
@@ -61,12 +61,18 @@
     border-bottom: 1px solid gray;
 }
 
+.register__error {
+    margin: 0 0 0 70px;
+    color: red;
+
+}
+
 .register__form-button {
     display: flex;
     position: relative;
     align-items: center;
     width: 100%;
-    height: 30%;
+    height: 20%;
 }
 
 .register__form-button > input {
@@ -79,4 +85,5 @@
     width: 60px;
     height: 30px;
     border-radius: 5px;
+    cursor: pointer;
 }

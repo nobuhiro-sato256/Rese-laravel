@@ -16,18 +16,3 @@
     font-size: 20px;
     margin: 70px 0 50px;
 }
-
-.login {
-    display: flex;
-    justify-content: center;
-}
-
-.login__button {
-    border: none;
-    background: #3b70f6;
-    cursor: pointer;
-    border-radius: 5px;
-    color: white;
-    height: 28px;
-    width: 110px;
-}
