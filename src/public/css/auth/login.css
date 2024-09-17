@@ -60,6 +60,12 @@
     border-bottom: 1px solid gray;
 }
 
+.login__error {
+    margin: 0 0 0 60px;
+    color: red;
+
+}
+
 .login__form-button {
     display: flex;
     position: relative;
@@ -78,4 +84,5 @@
     width: 80px;
     height: 30px;
     border-radius: 5px;
+    cursor: pointer;
 }

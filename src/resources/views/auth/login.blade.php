@@ -14,24 +14,24 @@
             <form class="login__form" action="/login" method="post">
                 @csrf
                 <div class="login__form-box">
-                    @error('email')
-                    @foreach ($errors->get('email') as $error)
-                    <P>{{ $error }}</P>
-                    @endforeach
-                    @enderror
                     <div class="login__form-item">
                         <i class="bi bi-envelope-fill"></i>
                         <input type="email" name="email" placeholder="Email" value="{{ old('email') }}"/>
                     </div>
-                    @error('password')
-                    @foreach ($errors->get('password') as $error)
-                    <P>{{ $error }}</P>
+                    @error('email')
+                    @foreach ($errors->get('email') as $error)
+                    <P class="login__error">{{ $error }}</P>
                     @endforeach
                     @enderror
                     <div class="login__form-item">
                         <i class="bi bi-lock-fill"></i>
                         <input type="password" name="password" placeholder="Password" />
                     </div>
+                    @error('password')
+                    @foreach ($errors->get('password') as $error)
+                    <P class="login__error">{{ $error }}</P>
+                    @endforeach
+                    @enderror
                 </div>
                 <div class="login__form-button">
                     <input type="submit" value="ログイン" />
