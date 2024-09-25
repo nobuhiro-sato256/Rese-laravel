@@ -55,7 +55,7 @@
         <div class="favorite__list">
             @foreach($favorites as $favorite)
             <div class="shop">
-                <img class="shop__image" src="{{$favorite->shop['shop_image']}}" >
+                <img class="shop__image" src="{{asset($favorite->shop['image_path'])}}" >
                 <div class="shop__content">
                     <p class="shop__title">{{$favorite->shop['store_name']}}</p>
                     <div class="shop__tag">
