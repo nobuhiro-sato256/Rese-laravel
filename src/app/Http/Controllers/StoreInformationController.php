@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\Identification;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\ReservationRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Shop;
