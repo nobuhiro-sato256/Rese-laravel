@@ -13,7 +13,7 @@
                 <p class="shop__title--name">{{$shop['store_name']}}</p>
             </div>
             <div class="shop__about">
-                <img class="shop__about--img" src="{{$shop['shop_image']}}" >
+                <img class="shop__about--img" src="{{asset($shop['image_path'])}}" >
                 <div class="shop__about--category">
                     <P>#{{$shop->area['name']}}</P>
                     <p>#{{$shop->genre['name']}}</p>
