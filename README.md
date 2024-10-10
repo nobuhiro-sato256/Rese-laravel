@@ -23,8 +23,7 @@ Nginx 1.21.1<br>
 Laravel Fortity 1.19.1<br>
 Docker/Docker-compose<br>　　
 ## テーブル設計
-<img src="https://github.com/nobuhiro-sato256/atte-laravel/assets/60766413/f38bcd56-8b2e-463a-9ca5-e66596764b92" width="300">
-
+<img src="https://github.com/nobuhiro-sato256/Rese-laravel/issues/48#issue-2577455117" width="300">
 ## ER図
 <img src="https://github.com/nobuhiro-sato256/atte-laravel/assets/60766413/4673859e-4038-4f4a-9df2-6ea69b6c881d" width="300">
 
